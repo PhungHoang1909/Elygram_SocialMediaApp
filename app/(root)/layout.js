@@ -1,3 +1,6 @@
+import { ClerkProvider } from "@clerk/nextjs"
+import "../globals.css";
+
 export const metadata = {
     title: 'Next.js',
     description: 'example',
@@ -5,8 +8,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
-            <body>{children}</body>
-        </html>
+        <ClerkProvider>
+            <html lang="en">
+                <body>{children}</body>
+            </html>
+        </ClerkProvider>
+        
     )
 }
