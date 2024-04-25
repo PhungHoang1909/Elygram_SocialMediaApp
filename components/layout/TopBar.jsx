@@ -1,8 +1,32 @@
-import React from 'react'
+"use client"
+
+import { Add, Search } from '@mui/icons-material';
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react'
 
 const TopBar = () => {
+  const router = useRouter()
+  const [search, setSearch] = useState('');
   return (
-    <div>TopBar</div>
+    <div className='flex justify-between items-center mt-6'>
+      <div className='relative'>
+
+        <input 
+          type='text' 
+          className='search-bar' 
+          placeholder='Search posts, people, ...' 
+          value={search} onChange={(e) => setSearch(e.target.value)} 
+        />
+        <Search className='search-icon' onClick={() => {}} />
+      </div>
+
+      <button
+        className="create-post-btn"
+        onClick={() => router.push("/create-post")}
+      >
+        <Add /> <p>Create A Post</p>
+      </button>
+    </div>
   )
 }
 

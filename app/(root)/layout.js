@@ -5,7 +5,6 @@ import { Inter } from "next/font/google";
 import LeftSideBar from "@components/layout/LeftSideBar";
 import MainContainer from "@components/layout/MainContainer";
 import RightSideBar from "@components/layout/RightSideBar";
-import TopBar from "@components/layout/TopBar";
 import BottomBar from "@components/layout/BottomBar";
 
 export const metadata = {
@@ -23,7 +22,6 @@ export default function RootLayout({ children }) {
                     <main className="flex flex-row">
                         <LeftSideBar />
                         <MainContainer>
-                            <TopBar />
                             {children}
                         </MainContainer>
                         <RightSideBar />
