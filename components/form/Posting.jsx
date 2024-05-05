@@ -31,7 +31,7 @@ const Posting = ({ post, apiEndpoint }) => {
         postForm.append("postPhoto", data.postPhoto);
       }
 
-      const response = await fetch("/api/post/new", {
+      const response = await fetch(apiEndpoint, {
         method: "POST",
         body: postForm,
       });

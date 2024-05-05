@@ -27,11 +27,20 @@ const EditPost = () => {
     getPost()
   }, [id])
 
+  const postInfo = {
+    creatorId: postData?.creator?._id,
+    caption: postData?.caption,
+    tag: postData?.tag,
+    postPhoto: postData?.postPhoto,
+  }
+
+  console.log(postInfo)
+  
   return loading ? (
     <Loader />
   ) : (
     <div className='pt-6'>
-      <Posting post={postData} />
+      <Posting post={postInfo} apiEndpoint={`/api/post/${id}`} />
     </div>
   )
 }
