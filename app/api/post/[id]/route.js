@@ -1,5 +1,6 @@
 import Post from "@lib/models/Post"
 import { connectToDB } from "@lib/mongodb/mongoose"
+import { writeFile } from "fs/promises"
 
 export const GET = async (req, { params }) => {
     try {
@@ -14,7 +15,7 @@ export const GET = async (req, { params }) => {
     }
 }
 
-export const POST = async (req) => {
+export const POST = async (req, { params }) => {
     const path = require("path")
     const currentWorkingDirectory = process.cwd()
     
